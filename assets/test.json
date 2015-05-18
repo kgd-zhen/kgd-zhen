@@ -1,0 +1,14 @@
+{
+ "segment":
+  {"type":"panel",
+   "description":"票头",
+   "dataset":"",
+   "metadata":[
+   				{"label":"@类型",    "type":"variable","key":"businesstype","align":"left","length":0,"digit":0,"maxlength":0},
+				{"label":"@分组",    "type":"variable","key":"grouptype",   "align":"left","length":0,"digit":0,"maxlength":0}
+			  ],
+   "lines":{
+			"line":{"fontsize":1,"content":"     @分组 @类型 报表           "}
+           }
+   }
+}
