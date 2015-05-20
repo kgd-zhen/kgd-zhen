@@ -33,6 +33,9 @@
         <activity
             android:name="com.kgd.zhen.activity.DBActivity">
         </activity>
+		<activity
+            android:name="com.kgd.zhen.activity.Activity_add_user">
+        </activity>
     </application>
 
 </manifest>

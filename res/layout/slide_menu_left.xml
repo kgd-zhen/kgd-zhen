@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/name_textview"
                 android:layout_below="@+id/name_textview"
-                android:text="月月鸟"
+                android:text="Shed"
                 android:textColor="@color/text_color"
                 android:textSize="12sp" />
         </RelativeLayout>

@@ -14,11 +14,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     // 数据库名
     private static final String DATABASE_NAME = "zhen.db";
-
+    public final static String DATABSE_TABLE0 = "zhen_user";// 用户表
     // 数据表名
     public static final String TABLE_NAME = "user";
 	
-	
+	// sql
+    private final static String DATABASE_CREATE0 = "create table " + DATABSE_TABLE0 + " (name VARCHAR(32),ename VARCHAR(32),pwd VARCHAR(32),phone VARCHAR(32),email VARCHAR(32),address VARCHAR(100),company VARCHAR(32),qq VARCHAR(32),note VARCHAR(32),reserve VARCHAR(32))";
 	
 	public DatabaseHelper(Context context, String name, CursorFactory factory,
 			int version, DatabaseErrorHandler errorHandler) {
@@ -55,7 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // 这个方法中主要完成创建数据库后对数据库的操作
 
         Log.d(TAG, "DatabaseHelper onCreate");
-
+        
+        db.execSQL(DATABASE_CREATE0);
+        
         // 构建创建表的SQL语句（可以从SQLite Expert工具的DDL粘贴过来加进StringBuffer中）
         StringBuffer sBuffer = new StringBuffer();
 
@@ -83,11 +86,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // 这个方法中主要完成更改数据库版本的操作
 
         Log.d(TAG, "DatabaseHelper onUpgrade");
-
+        db.execSQL("DROP TABLE IF EXISTS " + DATABSE_TABLE0);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
         // 上述做法简单来说就是，通过检查常量值来决定如何，升级时删除旧表，然后调用onCreate来创建新表
         // 一般在实际项目中是不能这么做的，正确的做法是在更新数据表结构时，还要考虑用户存放于数据库中的数据不丢失
+	}
+	
+	public void insert(SQLiteDatabase db, String sql) {
+
+			db.execSQL(sql);
+			System.out.println("插入成功！！");
 	}
 
 }

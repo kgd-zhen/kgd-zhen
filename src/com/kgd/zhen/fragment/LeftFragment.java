@@ -16,7 +16,11 @@
 package com.kgd.zhen.fragment;
 
 import com.example.kgd_zhen.R;
+import com.kgd.zhen.activity.SlidingActivity;
+import com.kgd.zhen.activity.Activity_add_user;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -31,6 +35,11 @@ import android.widget.TextView;
 public class LeftFragment extends Fragment {
 
 	public TextView tv_myTask;
+	public Context mContext;
+	public LeftFragment(Context context)
+	{
+		mContext = context;
+	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.slide_menu_left, null);
@@ -52,6 +61,8 @@ public class LeftFragment extends Fragment {
 			case R.id.my_question_textview:
 				Log.d("LeftFragment","----onClick --- my_task--");
 				System.out.print("--System.out.print--onClick --- my_task--");
+				Intent intent = new Intent(mContext,Activity_add_user.class);
+				startActivity(intent);
 				break;
 			default:
 				break;

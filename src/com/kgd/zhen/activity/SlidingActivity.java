@@ -59,7 +59,7 @@ public class SlidingActivity extends FragmentActivity{
 
 		FragmentTransaction t = this.getSupportFragmentManager()
 				.beginTransaction();
-		leftFragment = new LeftFragment();
+		leftFragment = new LeftFragment(this);
 		t.replace(R.id.left_frame, leftFragment);
 
 		rightFragment = new RightFragment();
