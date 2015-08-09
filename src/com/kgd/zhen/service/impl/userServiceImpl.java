@@ -23,4 +23,10 @@ public class userServiceImpl implements userService{
 		//TODO  addUser sql
 	}
 
+	@Override
+	public void delUser(zhen_userBean userBean) {
+		// TODO del user sql
+		
+	}
+
 }

@@ -14,4 +14,5 @@ public interface userService {
 	 */
 	public void addUser(zhen_userBean userBean);
 	
+	public void delUser(zhen_userBean userBean);
 }
